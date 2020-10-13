@@ -24,6 +24,11 @@ void camera_t::load(istream &ins)
    string attribute; 
 
    //add code here....
+   ins >> attribute;
+   while(attribute!="}") {
+      item_load(ins,attribute);
+      ins >> attribute;
+   }
 }
 
 /* item_load:
@@ -34,6 +39,17 @@ void camera_t::item_load(istream &ins, const string &attribute)
 {
    int ndx;
    //add code here....
+   
+   ndx = table_lookup(attributes, NUM_ATTRIBUTES, attribute);
+   switch(ndx) {
+      case PIXELDIM_ATT: ins >> pixel_dim[0] >> pixel_dim[1];
+                  break;
+      case WORLDDIM_ATT: ins >> world_dim[0] >> world_dim[1];
+                  break;
+      case VIEWPOINT_ATT: ins >> view_point;
+                  break;
+   }
+   
 }
 
 /* getxdim:
