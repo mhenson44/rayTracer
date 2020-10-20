@@ -1,7 +1,11 @@
+
 class sphere_t;
 typedef sphere_t * sphere_tptr;
 class sphere_t:public object_t
 {
+protected:
+   vector_t normal;
+   vecotr_t point;
  public:
  sphere_t(){};
  sphere_t(istream &ins, material_tptr mats[], int matcnt);
