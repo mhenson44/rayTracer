@@ -2,7 +2,7 @@ sphere_t::sphere_t(istream &ins, material_tptr mats[], int matcnt)
 {
    ins >> center;
    ins >> radius;
-   ins >> mats{matcnt];
+   ins >> mats[matcnt];
 }
 
 double sphere_t::hits(vector_t &base, vector_t &dir)
@@ -27,7 +27,7 @@ virtual void sphere_t::dump(ostream &outs)
       ins >> attribute;
    }
 }
-
+//end
 /* item_load:
  * pre-condition:
  * post-condition:

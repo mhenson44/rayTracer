@@ -19,3 +19,5 @@ protected:
  double center;
  double radius;
 };
+
+//end file
