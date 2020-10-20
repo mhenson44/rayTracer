@@ -1,4 +1,5 @@
 #include"camera_t.h"
+#include"rayhdrs.h"
 /* constructor:
  * pre-condition:
  * post-condition:
@@ -23,9 +24,9 @@ void camera_t::load(istream &ins)
 {   
    string attribute; 
 
-   //add code here....
    ins >> attribute;
-   while(attribute!="}") {
+   while(!ins.eof())
+   {
       item_load(ins,attribute);
       ins >> attribute;
    }
@@ -38,18 +39,17 @@ void camera_t::load(istream &ins)
 void camera_t::item_load(istream &ins, const string &attribute)
 {
    int ndx;
-   //add code here....
    
    ndx = table_lookup(attributes, NUM_ATTRIBUTES, attribute);
-   switch(ndx) {
+   switch(ndx)
+   {
       case PIXELDIM_ATT: ins >> pixel_dim[0] >> pixel_dim[1];
-                  break;
+            break;
       case WORLDDIM_ATT: ins >> world_dim[0] >> world_dim[1];
-                  break;
+            break;
       case VIEWPOINT_ATT: ins >> view_point;
-                  break;
+            break;
    }
-   
 }
 
 /* getxdim:
@@ -131,10 +131,9 @@ void camera_t::write_image(const char *image_filename)
       outs << "P6" << endl;
       outs << "#my ray trace image" << endl;
       outs << pixel_dim[0] << " " << pixel_dim[1] << endl;
-      outs << "255" << endl;;
+      outs << "255" << endl;
       //output all of the pixel information here, cover this later
       outs.close(); 
    }
 }
-
 

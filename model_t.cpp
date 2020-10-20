@@ -1,4 +1,5 @@
 #include"model_t.h"
+#include"rayhdrs.h"
 
 /* construct a model - initial the model data
  * pre-condition: the input stream to the data has been established

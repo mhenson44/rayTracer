@@ -1,8 +1,13 @@
-  camera cam1
+camera cam1
 {
    pixeldim 640 480
    worlddim 8 6
    viewpoint <4,3,4>
 }
-
+material yellow
+{
+ diffuse 4 4 0
+ ambient 5 4 0
+ specular 1 1 1
+}
 

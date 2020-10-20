@@ -1,6 +1,8 @@
+#include<iostream>
 #ifndef IRGB
 #define IRGB
 
+using namespace std;
 //for pixmap data
 //0 means black and 255 means maximal brightness
 class irgb_t
@@ -18,7 +20,8 @@ class irgb_t
       void dumper(FILE *out)
       {
          //fprintf(out,"%hhu\n%hhu\n%hhu\n",r,g,b);
-         fprintf(out,"%c%c%c",r,g,b);
+         //fprintf(out,"%c%c%c",r,g,b);
+         cout << r << " " << g << " " << b << " " << endl;
       }
 };
 
